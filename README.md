@@ -49,9 +49,7 @@ Built with Google's MediaPipe framework and OpenCV, this application uses 21-poi
   - [Finger State Detection](#finger-state-detection)
   - [Stroke Continuity Logic](#stroke-continuity-logic)
 - [Performance & Optimization](#-performance--optimization)
-- [Roadmap](#-roadmap)
 - [License](#-license)
-- [Acknowledgements](#-acknowledgements)
 
 ---
  
