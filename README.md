@@ -89,3 +89,11 @@ The result is a seamless painting experience where the user can switch colors, d
 ## 🎥 Demo
  
 > Draw freely in the air using just your index finger. Switch colors by raising both your index and middle fingers and pointing at the color palette at the top of the screen.
+
+```
+[Index Finger Up Only]     →  ✍️  Drawing Mode  (draws on canvas)
+[Index + Middle Finger Up] →  🖱️  Selection Mode (hover over palette to change color)
+[Black Color Selected]     →  🧽  Eraser Mode    (erases with wider brush)
+```
+ 
+---
