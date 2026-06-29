@@ -9,6 +9,5 @@
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
-![Stars](https://img.shields.io/github/stars/yourusername/ai-virtual-painter?style=for-the-badge)
 
 <br/>
