@@ -50,6 +50,7 @@ Built with Google's MediaPipe framework and OpenCV, this application uses 21-poi
   - [Stroke Continuity Logic](#stroke-continuity-logic)
 - [Performance & Optimization](#-performance--optimization)
 - [License](#-license)
+- [Acknowledgements](#-acknowledgements)
 
 ---
  
@@ -660,4 +661,26 @@ else:
 - **Reduce `detectionCon`** to `0.6` or `0.5` for faster but less precise detection in well-lit environments
 - **Set `maxHands=1`** if only single-hand use is needed — halves the detection workload
 - **Avoid running other GPU-intensive tasks** in parallel, as MediaPipe shares CPU resources
+---
+
+# 📄 License
+ 
+This project is licensed under the **MIT License** — you are free to use, modify, and distribute this software for personal or commercial purposes with attribution.
+ 
+```
+MIT License
+ 
+Copyright (c) 2024 [Your Name]
+ 
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+ 
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+```
+ 
 ---
