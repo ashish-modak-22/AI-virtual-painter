@@ -439,6 +439,7 @@ The entire application is controlled through two primary hand gestures detected 
 1. Raise both your **index and middle fingers** (enter Selection Mode)
 2. Move your hand so the index finger tip enters the **top 125 pixels** of the screen (the header region)
 3. Hover over the desired color zone:
+   
 | Screen X Range | Color Selected | BGR Value |
 |---|---|---|
 | `250 – 450` | 🟢 Green | `(0, 255, 0)` |
