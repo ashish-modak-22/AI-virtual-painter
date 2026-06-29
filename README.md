@@ -278,3 +278,24 @@ ai-virtual-painter/
 > **Note:** The `Header_Images/` folder must contain exactly 4 images corresponding to the four color/tool options. The images are loaded in alphabetical/directory order, so naming them `1.png` through `4.png` ensures correct ordering.
  
 ---
+
+# ⚙️ Prerequisites
+ 
+Before running this project, ensure your system meets the following requirements:
+ 
+- **Python 3.8 or higher** — [Download Python](https://www.python.org/downloads/)
+- **A working webcam** — Built-in or USB webcam (minimum 720p recommended)
+- **pip** — Python's package manager (bundled with Python 3.4+)
+- **Git** — For cloning the repository
+- **Adequate lighting** — MediaPipe hand detection accuracy improves significantly in well-lit environments
+
+ ### Hardware Recommendations
+ 
+| Component | Minimum | Recommended |
+|---|---|---|
+| CPU | Intel i5 / AMD Ryzen 5 | Intel i7 / AMD Ryzen 7 |
+| RAM | 4 GB | 8 GB+ |
+| Webcam | 720p @ 30FPS | 1080p @ 30FPS |
+| GPU | Not required | NVIDIA GPU (for future GPU acceleration) |
+ 
+---
