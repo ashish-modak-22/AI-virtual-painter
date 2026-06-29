@@ -111,3 +111,14 @@ The result is a seamless painting experience where the user can switch colors, d
 | **Canva** |  -------------- | For user interface to select colors |
 
  
+### Why These Technologies?
+ 
+**OpenCV** is the industry standard for real-time computer vision tasks. Its highly optimized C++ backend, exposed via Python bindings, allows frame-by-frame processing at camera speed without significant latency.
+ 
+**MediaPipe** provides a production-grade, pre-trained hand landmark detection pipeline developed and maintained by Google. It delivers 21 3D landmarks per hand at high accuracy without requiring a GPU, making it accessible on standard consumer hardware.
+ 
+**NumPy** is used to create and manipulate the drawing canvas as a raw pixel array (`np.zeros`), enabling efficient, low-level pixel operations that are faster than pure Python loops.
+ 
+**Python Virtual Environment** ensures complete dependency isolation, preventing version conflicts with other Python projects on the same system and guaranteeing reproducible builds.
+ 
+---
