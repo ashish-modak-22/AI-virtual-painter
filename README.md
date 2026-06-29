@@ -382,3 +382,29 @@ python -c "import numpy as np; print('NumPy:', np.__version__)"
  
 ---
  
+## 3. Prepare Header Images
+ 
+The application requires 4 header UI images inside the `Header_Images/` directory. Each image must be **1280 × 125 pixels** (to match the camera resolution and header height).
+ 
+Create or download 4 toolbar images representing your color palette:
+ 
+| File | Color | Hex Value |
+|---|---|---|
+| `1.png` | Green | `(0, 255, 0)` in BGR |
+| `2.png` | Purple/Magenta | `(255, 0, 255)` in BGR |
+| `3.png` | Cyan | `(0, 255, 255)` in BGR |
+| `4.png` | Eraser (Black) | `(0, 0, 0)` in BGR |
+ 
+> **Tip:** You can design these header images using any image editor (Photoshop, GIMP, Canva, etc.). Make sure each image clearly shows the color zones and the clickable region boundaries described in the source code.
+ 
+---
+ 
+## 4. Generate `requirements.txt` (For Contributors)
+ 
+If you want to regenerate the `requirements.txt` after installing new packages:
+ 
+```bash
+pip freeze > requirements.txt
+```
+ 
+---
