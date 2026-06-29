@@ -49,9 +49,7 @@ Built with Google's MediaPipe framework and OpenCV, this application uses 21-poi
   - [Finger State Detection](#finger-state-detection)
   - [Stroke Continuity Logic](#stroke-continuity-logic)
 - [Performance & Optimization](#-performance--optimization)
-- [Troubleshooting](#-troubleshooting)
 - [Roadmap](#-roadmap)
-- [Contributing](#-contributing)
 - [License](#-license)
 - [Acknowledgements](#-acknowledgements)
 
@@ -600,3 +598,48 @@ img = cv2.bitwise_or(img, drawing_canvas)
 - Result: drawing appears to float on top of the real camera feed
 ---
  
+### Finger State Detection
+ 
+The `fingersUp()` function encodes hand pose into a compact 5-bit vector using anatomical landmark comparisons:
+ 
+```python
+def fingersUp(self):
+    fingers = []
+ 
+    # Thumb: horizontal comparison (X axis)
+    if self.lmList[self.tipId[0]][1] < self.lmList[self.tipId[0]-1][1]:
+        fingers.append(1)
+    else:
+        fingers.append(0)
+ 
+    # Fingers 1-4: vertical comparison (Y axis)
+    for id in range(1, 5):
+        if self.lmList[self.tipId[id]][2] < self.lmList[self.tipId[id]-2][2]:
+            fingers.append(1)
+        else:
+            fingers.append(0)
+ 
+    return fingers
+```
+ 
+---
+ 
+### Stroke Continuity Logic
+ 
+A naive implementation would only draw a circle at the current fingertip position each frame. This produces a dotted/dashed trail at moderate drawing speeds. The solution tracks the **previous frame's position** and draws a line between consecutive positions:
+ 
+```python
+if not drawing_started:
+    # First frame entering draw mode — set anchor point
+    x_previous, y_previous = x_index, y_index
+    drawing_started = True
+else:
+    # Subsequent frames — draw connecting line
+    cv2.line(drawing_canvas,
+             (x_previous, y_previous),
+             (x_index, y_index),
+             selected_color, brushThickness)
+    x_previous, y_previous = x_index, y_index
+```
+ 
+---
