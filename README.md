@@ -470,3 +470,15 @@ A colored rectangle is drawn between your index and middle finger tips as visual
  
 ---
  
+# 📦 Module Breakdown
+ 
+### `HandTrackingModule.py`
+ 
+This module encapsulates all hand-detection functionality into a clean, reusable `HandDetector` class. It is designed to be imported independently of the painter logic, making it suitable for other computer vision projects.
+ 
+#### Class: `HandDetector`
+ 
+```python
+class HandDetector:
+    def __init__(self, maxHands=2, detectionCon=0.5)
+```
