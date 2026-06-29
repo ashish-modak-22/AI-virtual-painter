@@ -346,3 +346,39 @@ source venv/bin/activate
 which python        # macOS/Linux
 where python        # Windows
 ```
+### Deactivating the Virtual Environment
+ 
+When you're done working on the project, deactivate the virtual environment:
+ 
+```bash
+deactivate
+```
+ 
+> ⚠️ **Important:** Always activate your virtual environment before running the project or installing new dependencies. All subsequent commands assume the virtual environment is active.
+ 
+---
+ 
+## Dependency Installation
+ 
+With the virtual environment active, install all required packages:
+ 
+```bash
+pip install -r requirements.txt
+```
+ 
+If a `requirements.txt` is not present, install the dependencies manually:
+ 
+```bash
+pip install opencv-python mediapipe numpy
+```
+ 
+### Verify Installations
+ 
+```bash
+python -c "import cv2; print('OpenCV:', cv2.__version__)"
+python -c "import mediapipe as mp; print('MediaPipe:', mp.__version__)"
+python -c "import numpy as np; print('NumPy:', np.__version__)"
+```
+ 
+---
+ 
