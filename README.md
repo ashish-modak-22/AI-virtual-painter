@@ -97,3 +97,15 @@ The result is a seamless painting experience where the user can switch colors, d
 ```
  
 ---
+
+# 🛠️ Tech Stack
+ 
+| Technology | Version | Purpose |
+|---|---|---|
+| **Python** | 3.8+ | Core programming language |
+| **OpenCV (`cv2`)** | 4.7+ | Frame capture, image processing, drawing primitives |
+| **MediaPipe** | 0.10+ | Real-time AI hand landmark detection |
+| **NumPy** | 1.24+ | Canvas array creation, pixel-level image operations |
+| **OS (stdlib)** | Built-in | Directory traversal for header image loading |
+| **Virtual Environment (`venv`)** | Built-in | Isolated Python runtime environment |
+ 
