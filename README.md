@@ -12,3 +12,5 @@
 ![Canva](https://img.shields.io/badge/Canva-00C4CC?style=for-the-badge&logo=canva&logoColor=white)
 
 <br/>
+
+**A real-time, AI-powered virtual painting application that uses your bare hand as a brush — no physical tools required.**
