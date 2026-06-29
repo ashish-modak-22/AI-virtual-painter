@@ -559,3 +559,9 @@ distance = sqrt((x2-x1)² + (y2-y1)²)
 This method is available for extension — it can be used to detect pinch gestures (e.g., distance between landmark 4 and 8 for thumb-index pinch), which can trigger additional controls in future iterations.
  
 ---
+
+### `VirtualPainter.py`
+ 
+This is the main application script. It orchestrates the webcam feed, integrates the `HandDetector`, manages the drawing canvas, and handles all UI logic.
+
+---
