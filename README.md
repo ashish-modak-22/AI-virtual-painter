@@ -434,4 +434,21 @@ The entire application is controlled through two primary hand gestures detected 
 | ✌️ Index + Middle | `[_, 1, 1, _, _]` | **Selection Mode** | Move hand to palette to change color/tool |
  
 > **Note:** The `_` in the finger vector means the state of that finger (Thumb, Ring, Pinky) does not affect the mode detection — only the Index and Middle finger states are used.
+
+ ---
  
+### Color Selection
+ 
+1. Raise both your **index and middle fingers** (enter Selection Mode)
+2. Move your hand so the index finger tip enters the **top 125 pixels** of the screen (the header region)
+3. Hover over the desired color zone:
+| Screen X Range | Color Selected | BGR Value |
+|---|---|---|
+| `250 – 450` | 🟢 Green | `(0, 255, 0)` |
+| `550 – 750` | 🟣 Purple | `(255, 0, 255)` |
+| `800 – 950` | 🔵 Cyan | `(0, 255, 255)` |
+| `1050 – 1200` | ⬛ Eraser | `(0, 0, 0)` |
+ 
+A colored rectangle is drawn between your index and middle finger tips as visual feedback for the currently selected color.
+ 
+---
