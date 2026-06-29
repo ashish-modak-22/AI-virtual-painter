@@ -208,3 +208,18 @@ MediaPipe detects **21 landmarks** on each hand, each identified by a unique int
                \    |
                 0 (WRIST)
 ```
+| Landmark ID | Name | Role in This Project |
+|---|---|---|
+| 0 | WRIST | Base reference point |
+| 4 | THUMB_TIP | Thumb state detection |
+| 3 | THUMB_IP | Thumb state comparison |
+| 8 | INDEX_FINGER_TIP | Primary drawing point / pointer |
+| 6 | INDEX_FINGER_PIP | Finger raise comparison |
+| 12 | MIDDLE_FINGER_TIP | Selection mode detection |
+| 10 | MIDDLE_FINGER_PIP | Finger raise comparison |
+| 16 | RING_FINGER_TIP | State detection |
+| 20 | PINKY_TIP | State detection |
+ 
+The `tipId` list `[4, 8, 12, 16, 20]` corresponds to the tip of each finger (Thumb → Pinky), and each is compared to the joint two steps below it (the PIP joint) to determine if the finger is extended.
+ 
+---
