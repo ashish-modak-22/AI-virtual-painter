@@ -16,3 +16,8 @@
 **A real-time, AI-powered virtual painting application that uses your bare hand as a brush — no physical tools required.**
 
 Built with Google's MediaPipe framework and OpenCV, this application uses 21-point hand landmark detection to translate natural finger gestures into digital art on a live webcam feed.
+
+[Features](#-features) • [Demo](#-demo) • [Tech Stack](#-tech-stack) • [Architecture](#-architecture) • [Installation](#-installation) • [Usage](#-usage) • [Project Structure](#-project-structure) • [How It Works](#-how-it-works) • [Configuration](#-configuration) • [Contributing](#-contributing)
+ 
+</div>
+---
