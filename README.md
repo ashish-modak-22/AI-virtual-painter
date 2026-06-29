@@ -22,3 +22,13 @@ Built with Google's MediaPipe framework and OpenCV, this application uses 21-poi
 </div>
 
 ---
+
+## 📖 Table of Contents
+ 
+- [Project Overview](#-project-overview)
+- [Features](#-features)
+- [Demo](#-demo)
+- [Tech Stack](#-tech-stack)
+- [System Architecture](#-system-architecture)
+- [Hand Landmark System](#-hand-landmark-system)
+- [Computer Vision Pipeline](#-computer-vision-pipeline)
