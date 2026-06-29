@@ -71,3 +71,17 @@ Built with Google's MediaPipe framework and OpenCV, this application uses 21-poi
 The result is a seamless painting experience where the user can switch colors, draw strokes, and erase content — entirely through hand gestures, with zero physical contact with any device.
  
 ---
+
+# ✨ Features
+ 
+- 🖐️ **Real-time Hand Tracking** — Detects and tracks 21 hand landmarks at up to 30 FPS using MediaPipe's deep learning model
+- 🎨 **Multi-Color Drawing** — Supports Green, Purple, Cyan, and Eraser modes selectable via hand gesture
+- ✍️ **Gesture-Based Mode Switching** — Seamlessly switch between Selection Mode and Drawing Mode using finger gestures
+- 🖌️ **Smooth Stroke Rendering** — Continuous line drawing between frames using previous-position tracking to eliminate gaps
+- 🧽 **Smart Eraser** — Black-color-based eraser with a wider brush thickness for comfortable erasing
+- 🖼️ **Header UI Overlay** — Visual color palette overlaid directly on the camera feed for an intuitive interface
+- 🔀 **Real-time Canvas Compositing** — Drawing canvas merged with the camera feed using bitwise image operations to keep the background visible
+- 📷 **Mirror Mode** — Horizontal flip of the webcam feed for a natural mirror-like interaction
+- 📐 **High-Resolution Support** — Operates at 1280×720 resolution for clear, high-fidelity drawing
+- 🧩 **Modular Architecture** — Clean separation of the hand-tracking module from the main painter logic
+---
