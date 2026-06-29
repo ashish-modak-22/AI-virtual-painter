@@ -684,3 +684,15 @@ copies or substantial portions of the Software.
 ```
  
 ---
+# 🙏 Acknowledgements
+ 
+- **[Google MediaPipe](https://mediapipe.dev/)** — For the open-source, production-quality hand landmark detection model that powers the core AI functionality of this project
+- **[OpenCV](https://opencv.org/)** — For the comprehensive, battle-tested computer vision library used for all image processing operations
+- **[NumPy](https://numpy.org/)** — For efficient multi-dimensional array operations enabling the drawing canvas implementation
+---
+
+<div align="center">
+  
+**Built with ❤️ using Python, OpenCV, and MediaPipe**
+ 
+</div>
