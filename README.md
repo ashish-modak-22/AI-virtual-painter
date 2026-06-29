@@ -408,3 +408,30 @@ pip freeze > requirements.txt
 ```
  
 ---
+
+ 
+# ▶️ Usage Guide
+ 
+Run the main application with:
+ 
+```bash
+python VirtualPainter.py
+```
+ 
+A window titled **"Virtual Painter"** will open showing your webcam feed with the color palette header overlaid at the top.
+ 
+Press **`s`** to exit the application cleanly.
+ 
+---
+ 
+## Gesture Controls
+ 
+The entire application is controlled through two primary hand gestures detected by the AI model:
+ 
+| Gesture | Fingers Up | Mode | Description |
+|---|---|---|---|
+| ☝️ Index only | `[_, 1, 0, _, _]` | **Drawing Mode** | Draws on canvas at index finger tip position |
+| ✌️ Index + Middle | `[_, 1, 1, _, _]` | **Selection Mode** | Move hand to palette to change color/tool |
+ 
+> **Note:** The `_` in the finger vector means the state of that finger (Thumb, Ring, Pinky) does not affect the mode detection — only the Index and Middle finger states are used.
+ 
