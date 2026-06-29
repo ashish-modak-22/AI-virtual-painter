@@ -50,3 +50,12 @@ Built with Google's MediaPipe framework and OpenCV, this application uses 21-poi
   - [Bitwise Image Compositing](#bitwise-image-compositing)
   - [Finger State Detection](#finger-state-detection)
   - [Stroke Continuity Logic](#stroke-continuity-logic)
+- [Performance & Optimization](#-performance--optimization)
+- [Troubleshooting](#-troubleshooting)
+- [Roadmap](#-roadmap)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Acknowledgements](#-acknowledgements)
+
+---
+ 
