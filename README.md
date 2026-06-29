@@ -189,3 +189,22 @@ The application follows a **layered pipeline architecture**, where each stage pr
 ```
  
 ---
+
+# 🖐️ Hand Landmark System
+ 
+MediaPipe detects **21 landmarks** on each hand, each identified by a unique integer ID. This project uses the following key landmarks:
+ 
+```
+                8   12  16  20
+                |   |   |   |
+                7   11  15  19
+            4   |   |   |   |
+            |   6   10  14  18
+            3   |   |   |   |
+            |   5---9--13--17
+            2       |
+             \      |
+              1     |
+               \    |
+                0 (WRIST)
+```
