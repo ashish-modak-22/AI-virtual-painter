@@ -108,4 +108,6 @@ The result is a seamless painting experience where the user can switch colors, d
 | **NumPy** | 1.24+ | Canvas array creation, pixel-level image operations |
 | **OS (stdlib)** | Built-in | Directory traversal for header image loading |
 | **Virtual Environment (`venv`)** | Built-in | Isolated Python runtime environment |
+| **Canva** |  For user interface to select colors |
+
  
