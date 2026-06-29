@@ -233,3 +233,26 @@ Each iteration of the main loop reads a raw BGR frame from the webcam at 1280×7
 ### Hand Detection
  
 The frame is converted from BGR (OpenCV default) to RGB (MediaPipe requirement) and passed to the `hands.process()` method. The underlying model is a lightweight MobileNet-based CNN that predicts 21 3D keypoints per hand.
+
+### Coordinate Normalization
+ 
+MediaPipe returns normalized coordinates in the range `[0.0, 1.0]`. These are multiplied by the frame's actual pixel dimensions (`width`, `height`) to get pixel-space coordinates:
+ 
+```python
+cx = int(landmark.x * w)
+cy = int(landmark.y * h)
+```
+ 
+### Canvas Compositing
+ 
+The drawing canvas is a black NumPy array (`np.zeros((720, 1280, 3), np.uint8)`). To merge it with the live camera feed without losing the background:
+ 
+1. Convert canvas to grayscale
+2. Apply binary inverse threshold — drawn pixels become black (0), empty canvas becomes white (255)
+3. Convert inverted mask back to BGR
+4. `bitwise_and` the camera frame with the inverted mask → **punches holes** where drawing exists
+5. `bitwise_or` the punched frame with the drawing canvas → **fills the holes** with drawing colors
+This is equivalent to alpha-blending, implemented entirely via logical bitwise operations on pixel arrays.
+ 
+---
+ 
