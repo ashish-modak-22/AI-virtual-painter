@@ -57,7 +57,12 @@ Built with Google's MediaPipe framework and OpenCV, this application uses 21-poi
 
 ---
  
-## 🧠 Project Overview
+# 🧠 Project Overview
  
 **AI Virtual Painter** is a touchless, real-time digital drawing system powered by computer vision and artificial intelligence. The application processes live webcam frames to detect and track 21 distinct hand landmarks using Google's **MediaPipe Hands** model, then interprets the spatial coordinates and relative finger positions as intuitive drawing gestures.
  
+### This project demonstrates the intersection of several advanced domains in modern software engineering and AI:
+ 
+- **Real-time Computer Vision** — processing 30+ frames per second from a live camera stream
+- **AI-based Pose Estimation** — using a pre-trained neural network to detect hand skeleton topology
+- **Image Processing** — multi-layer alpha compositing, binary masking, and bitwise operations
