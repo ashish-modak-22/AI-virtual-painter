@@ -7,3 +7,8 @@
 ![MediaPipe](https://img.shields.io/badge/MediaPipe-0.10%2B-FF6F00?style=for-the-badge&logo=google&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-1.24%2B-013243?style=for-the-badge&logo=numpy&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
+![Stars](https://img.shields.io/github/stars/yourusername/ai-virtual-painter?style=for-the-badge)
+
+<br/>
