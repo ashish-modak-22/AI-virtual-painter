@@ -482,3 +482,80 @@ This module encapsulates all hand-detection functionality into a clean, reusable
 class HandDetector:
     def __init__(self, maxHands=2, detectionCon=0.5)
 ```
+**Constructor Parameters:**
+ 
+| Parameter | Type | Default | Description |
+|---|---|---|---|
+| `maxHands` | `int` | `2` | Maximum number of hands to detect simultaneously |
+| `detectionCon` | `float` | `0.5` | Minimum confidence threshold for detection (0.0–1.0) |
+ 
+In `VirtualPainter.py`, `detectionCon` is increased to `0.8` for higher precision, reducing false positives at the cost of slightly reduced recall in difficult lighting.
+ 
+---
+ 
+#### Method: `findHands(img)`
+ 
+```python
+def findHands(self, img) -> np.ndarray
+```
+ 
+Processes a BGR frame, runs it through MediaPipe's hand detection pipeline, and draws skeleton landmarks and connections onto the frame.
+ 
+- Converts BGR → RGB internally for MediaPipe compatibility
+- Stores results in `self.results` for downstream use
+- Draws landmarks using `mp_draw.draw_landmarks()` with `HAND_CONNECTIONS`
+- Returns the annotated frame
+---
+ 
+#### Method: `findPosition(img, handNo=0, draw=True)`
+ 
+```python
+def findPosition(self, img, handNo=0, draw=True) -> list
+```
+ 
+Extracts the pixel-space coordinates of all 21 landmarks for a specified hand.
+ 
+**Returns:** A list of `[id, cx, cy]` tuples for each of the 21 landmarks.
+ 
+| Return Index | Content |
+|---|---|
+| `lmList[0]` | `[0, wrist_x, wrist_y]` |
+| `lmList[8]` | `[8, index_tip_x, index_tip_y]` |
+| `lmList[12]` | `[12, middle_tip_x, middle_tip_y]` |
+ 
+---
+ 
+#### Method: `fingersUp()`
+ 
+```python
+def fingersUp(self) -> list[int]
+```
+ 
+Returns a **5-element binary list** representing the state of each finger:
+ 
+```
+[Thumb, Index, Middle, Ring, Pinky]
+  0/1    0/1    0/1    0/1    0/1
+```
+ 
+**Logic:**
+ 
+- **Thumb:** Compares tip X-coordinate to the joint below it. Since the thumb moves horizontally (for a hand facing the camera), an X-based comparison is used instead of Y.
+- **Other 4 fingers:** Each tip's Y-coordinate is compared to the PIP joint (2 joints below). In OpenCV's coordinate system, Y increases downward — so a **smaller Y** at the tip means the finger is pointing **up**.
+---
+ 
+#### Method: `findDistance(p1, p2, img)`
+ 
+```python
+def findDistance(self, p1, p2, img) -> float
+```
+ 
+Computes the Euclidean distance in pixels between two landmarks identified by their IDs.
+ 
+```
+distance = sqrt((x2-x1)² + (y2-y1)²)
+```
+ 
+This method is available for extension — it can be used to detect pinch gestures (e.g., distance between landmark 4 and 8 for thumb-index pinch), which can trigger additional controls in future iterations.
+ 
+---
