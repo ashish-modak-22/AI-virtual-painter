@@ -302,8 +302,8 @@ Before running this project, ensure your system meets the following requirements
 ## 1. Clone the Repository
  
 ```bash
-git clone https://github.com/yourusername/ai-virtual-painter.git
-cd ai-virtual-painter
+git clone https://github.com/ashish-modak-22/AI-virtual-painter.git
+cd AI-virtual-painter
 ```
  
 ## Virtual Environment Setup (Recommended)
