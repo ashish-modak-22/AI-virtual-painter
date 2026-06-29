@@ -299,3 +299,29 @@ Before running this project, ensure your system meets the following requirements
 | GPU | Not required | NVIDIA GPU (for future GPU acceleration) |
  
 ---
+
+# 🚀 Installation & Setup
+ 
+## 1. Clone the Repository
+ 
+```bash
+git clone https://github.com/yourusername/ai-virtual-painter.git
+cd ai-virtual-painter
+```
+ 
+## Virtual Environment Setup (Recommended)
+ 
+Using a Python virtual environment is **strongly recommended** and was used during the development of this project. A virtual environment creates an isolated Python runtime, meaning the packages installed for this project will not interfere with your global Python installation or any other projects.
+ 
+### On Windows
+ 
+```bash
+# Create virtual environment
+python -m venv venv
+ 
+# Activate the virtual environment
+venv\Scripts\activate
+ 
+# Your terminal prompt should now show (venv) at the beginning
+# Example: (venv) C:\Users\YourName\ai-virtual-painter>
+```
