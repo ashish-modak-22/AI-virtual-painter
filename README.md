@@ -85,3 +85,7 @@ The result is a seamless painting experience where the user can switch colors, d
 - 📐 **High-Resolution Support** — Operates at 1280×720 resolution for clear, high-fidelity drawing
 - 🧩 **Modular Architecture** — Clean separation of the hand-tracking module from the main painter logic
 ---
+
+## 🎥 Demo
+ 
+> Draw freely in the air using just your index finger. Switch colors by raising both your index and middle fingers and pointing at the color palette at the top of the screen.
