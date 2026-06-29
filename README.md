@@ -66,3 +66,8 @@ Built with Google's MediaPipe framework and OpenCV, this application uses 21-poi
 - **Real-time Computer Vision** — processing 30+ frames per second from a live camera stream
 - **AI-based Pose Estimation** — using a pre-trained neural network to detect hand skeleton topology
 - **Image Processing** — multi-layer alpha compositing, binary masking, and bitwise operations
+- **Human-Computer Interaction (HCI)** — designing gesture-based interfaces as an alternative to traditional input devices
+- **Modular Software Design** — separating hand-tracking logic from application logic for reusability and testability
+The result is a seamless painting experience where the user can switch colors, draw strokes, and erase content — entirely through hand gestures, with zero physical contact with any device.
+ 
+---
