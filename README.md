@@ -385,7 +385,6 @@ The application requires 4 header UI images inside the `Header_Images/` director
  
 Create or download 4 toolbar images representing your color palette:
 
- 
 | File | Color | Hex Value |
 |---|---|---|
 | `1.png` | Green | `(0, 255, 0)` in BGR |
