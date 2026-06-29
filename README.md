@@ -223,3 +223,13 @@ MediaPipe detects **21 landmarks** on each hand, each identified by a unique int
 The `tipId` list `[4, 8, 12, 16, 20]` corresponds to the tip of each finger (Thumb → Pinky), and each is compared to the joint two steps below it (the PIP joint) to determine if the finger is extended.
  
 ---
+
+# 🔬 Computer Vision Pipeline
+ 
+### Frame Acquisition
+ 
+Each iteration of the main loop reads a raw BGR frame from the webcam at 1280×720 resolution. The frame is immediately flipped horizontally (`cv2.flip(img, 1)`) to create a natural mirror experience, ensuring the user's right hand appears on the right side of the screen.
+ 
+### Hand Detection
+ 
+The frame is converted from BGR (OpenCV default) to RGB (MediaPipe requirement) and passed to the `hands.process()` method. The underlying model is a lightweight MobileNet-based CNN that predicts 21 3D keypoints per hand.
