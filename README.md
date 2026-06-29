@@ -641,3 +641,23 @@ else:
 ```
  
 ---
+
+# ⚡ Performance & Optimization
+ 
+### Current Performance Profile
+ 
+| Metric | Value |
+|---|---|
+| Target FPS | 30 FPS |
+| Resolution | 1280 × 720 |
+| Detection Confidence | 0.8 |
+| Max Hands Tracked | 2 (configurable) |
+| CPU Usage (typical) | 30–60% (single core) |
+ 
+### Optimization Tips
+ 
+- **Lower resolution** for slower systems: Change `cap.set(3, 640)` and `cap.set(4, 480)` and update canvas size accordingly
+- **Reduce `detectionCon`** to `0.6` or `0.5` for faster but less precise detection in well-lit environments
+- **Set `maxHands=1`** if only single-hand use is needed — halves the detection workload
+- **Avoid running other GPU-intensive tasks** in parallel, as MediaPipe shares CPU resources
+---
