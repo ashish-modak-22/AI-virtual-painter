@@ -446,9 +446,27 @@ The entire application is controlled through two primary hand gestures detected 
 |---|---|---|
 | `250 – 450` | 🟢 Green | `(0, 255, 0)` |
 | `550 – 750` | 🟣 Purple | `(255, 0, 255)` |
-| `800 – 950` | 🔵 Cyan | `(0, 255, 255)` |
+| `800 – 950` | 🟡 Yellow | `(0, 255, 255)` |
 | `1050 – 1200` | ⬛ Eraser | `(0, 0, 0)` |
  
 A colored rectangle is drawn between your index and middle finger tips as visual feedback for the currently selected color.
  
 ---
+
+### Drawing Mode
+ 
+1. Raise only your **index finger** (curl middle, ring, and pinky)
+2. A circle indicator appears at your fingertip to show the active brush color
+3. Move your hand freely — the application draws continuous lines connecting each frame's fingertip position to the previous one
+4. The first frame you enter drawing mode sets the "pen down" starting position — no accidental strokes when switching from selection mode
+---
+ 
+### Eraser Mode
+ 
+1. Select the **black (eraser)** color from the palette using Selection Mode
+2. Switch to Drawing Mode (index finger only)
+3. The eraser uses a **wider brush thickness** (`eraserThickness = 50`) compared to the regular brush (`brushThickness = 15`) for comfortable erasing
+> The eraser works by drawing black pixels (`(0, 0, 0)`) on the drawing canvas. Since the compositing pipeline uses black as "transparent," black strokes effectively erase previously drawn content.
+ 
+---
+ 
