@@ -121,5 +121,71 @@ The result is a seamless painting experience where the user can switch colors, d
  
 **Python Virtual Environment** ensures complete dependency isolation, preventing version conflicts with other Python projects on the same system and guaranteeing reproducible builds.
 
- **Canva** is used to design the UI from where user can select three different colors and eraser.
+**Canva** is used to make UI from where user can select colors and eraser.
+
+---
+
+ 
+# 🏗️ System Architecture
+ 
+The application follows a **layered pipeline architecture**, where each stage processes data and passes it to the next:
+ 
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        WEBCAM INPUT LAYER                       │
+│              cv2.VideoCapture → Frame Acquisition               │
+│                  Resolution: 1280 x 720 @ 30FPS                 │
+└───────────────────────────┬─────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    PRE-PROCESSING LAYER                         │
+│            Horizontal Flip (Mirror Mode via cv2.flip)           │
+│              BGR → RGB Conversion for MediaPipe                 │
+└───────────────────────────┬─────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│              AI HAND DETECTION & LANDMARK LAYER                 │
+│         MediaPipe Hands Model (min_detection_conf: 0.8)         │
+│           Outputs: 21 Landmarks (x, y, z) per Hand             │
+│           Draws: Hand skeleton + connections on frame           │
+└───────────────────────────┬─────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                  GESTURE RECOGNITION LAYER                      │
+│       fingersUp() → Encodes 5-bit finger state vector           │
+│   [Thumb, Index, Middle, Ring, Pinky] → e.g. [0,1,0,0,0]       │
+│   Selection Mode: [_,1,1,_,_] | Drawing Mode: [_,1,0,_,_]      │
+└───────────────────────────┬─────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                 APPLICATION LOGIC LAYER                         │
+│  ┌──────────────────────┐    ┌──────────────────────────────┐   │
+│  │   SELECTION MODE     │    │       DRAWING MODE           │   │
+│  │  - Color picking     │    │  - Stroke rendering          │   │
+│  │  - Palette highlight │    │  - Previous pos tracking     │   │
+│  │  - Header update     │    │  - Eraser detection          │   │
+│  └──────────────────────┘    └──────────────────────────────┘   │
+└───────────────────────────┬─────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                IMAGE COMPOSITING LAYER                          │
+│   drawing_canvas (NumPy array) → Gray → Binary Mask → Invert   │
+│   bitwise_and(camera_frame, inverted_mask)                      │
+│   bitwise_or(masked_frame, drawing_canvas)                      │
+│   Overlay Header UI on top [0:125, 0:1280]                      │
+└───────────────────────────┬─────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                      OUTPUT LAYER                               │
+│              cv2.imshow("Virtual Painter", img)                 │
+│                   Real-time display window                      │
+└─────────────────────────────────────────────────────────────────┘
+```
+ 
 ---
