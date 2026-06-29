@@ -120,5 +120,6 @@ The result is a seamless painting experience where the user can switch colors, d
 **NumPy** is used to create and manipulate the drawing canvas as a raw pixel array (`np.zeros`), enabling efficient, low-level pixel operations that are faster than pure Python loops.
  
 **Python Virtual Environment** ensures complete dependency isolation, preventing version conflicts with other Python projects on the same system and guaranteeing reproducible builds.
- 
+
+ **Canva** is used to design the UI from where user can select three different colors and eraser.
 ---
