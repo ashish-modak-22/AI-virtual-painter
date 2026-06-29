@@ -325,3 +325,24 @@ venv\Scripts\activate
 # Your terminal prompt should now show (venv) at the beginning
 # Example: (venv) C:\Users\YourName\ai-virtual-painter>
 ```
+ 
+### On macOS / Linux
+ 
+```bash
+# Create virtual environment
+python3 -m venv venv
+ 
+# Activate the virtual environment
+source venv/bin/activate
+ 
+# Your terminal prompt should now show (venv) at the beginning
+# Example: (venv) user@machine:~/ai-virtual-painter$
+```
+ 
+### Verifying the Virtual Environment is Active
+ 
+```bash
+# Should point to your project's venv, not the global Python
+which python        # macOS/Linux
+where python        # Windows
+```
