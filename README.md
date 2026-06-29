@@ -256,3 +256,25 @@ This is equivalent to alpha-blending, implemented entirely via logical bitwise o
  
 ---
  
+# 📁 Project Structure
+ 
+```
+ai-virtual-painter/
+│
+├── 📄 VirtualPainter.py          # Main application entry point
+├── 📄 HandTrackingModule.py      # Reusable hand detection class
+│
+├── 📁 Header_Images/             # UI color palette overlay images
+│   ├── 1.png                     # Green color header
+│   ├── 2.png                     # Purple color header
+│   ├── 3.png                     # Cyan color header
+│   └── 4.png                     # Eraser (black) header
+│
+├── 📄 requirements.txt           # Python package dependencies
+├── 📄 README.md                  # Project documentation (you are here)
+└── 📄 .gitignore                 # Git ignore rules
+```
+ 
+> **Note:** The `Header_Images/` folder must contain exactly 4 images corresponding to the four color/tool options. The images are loaded in alphabetical/directory order, so naming them `1.png` through `4.png` ensures correct ordering.
+ 
+---
