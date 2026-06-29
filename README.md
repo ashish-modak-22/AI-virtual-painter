@@ -565,3 +565,38 @@ This method is available for extension — it can be used to detect pinch gestur
 This is the main application script. It orchestrates the webcam feed, integrates the `HandDetector`, manages the drawing canvas, and handles all UI logic.
 
 ---
+
+# 🔑 Key Algorithms Explained
+ 
+### Bitwise Image Compositing
+ 
+The core challenge of this project is merging a transparent-feeling drawing layer on top of a live camera feed, given that OpenCV has no native transparency support for real-time frames.
+ 
+The solution uses a 4-step bitwise mask approach:
+ 
+```python
+# Step 1: Convert canvas to grayscale
+gray_image = cv2.cvtColor(drawing_canvas, cv2.COLOR_BGR2GRAY)
+ 
+# Step 2: Binary inverse threshold
+# Empty canvas (black=0) → White (255)  [background]
+# Drawn pixels (color≠0) → Black (0)    [foreground holes]
+_, inverse_image = cv2.threshold(gray_image, 50, 255, cv2.THRESH_BINARY_INV)
+ 
+# Step 3: Convert mask back to 3-channel BGR for bitwise ops
+inverse_image = cv2.cvtColor(inverse_image, cv2.COLOR_GRAY2BGR)
+ 
+# Step 4a: AND — Keep only background (zero out where drawing exists)
+img = cv2.bitwise_and(img, inverse_image)
+ 
+# Step 4b: OR — Fill the zeroed regions with the colored drawing
+img = cv2.bitwise_or(img, drawing_canvas)
+```
+ 
+**Why this works:**
+ 
+- `bitwise_and` with an inverted mask sets drawn pixels in the camera frame to `0` (black)
+- `bitwise_or` then merges the colorful drawing canvas into those now-black regions
+- Result: drawing appears to float on top of the real camera feed
+---
+ 
