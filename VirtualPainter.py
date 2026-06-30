@@ -6,6 +6,7 @@ import HandTrackingModule as htm
 
 
 
+# The 'os' module will help to get the list of all header image files
 folderPath = "Header_Images"
 myList = os.listdir(folderPath)
 
