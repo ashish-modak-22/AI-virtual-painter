@@ -11,7 +11,7 @@ folderPath = "Header_Images"
 myList = os.listdir(folderPath)
 
 
-
+# Storing all the loaded overlay images
 overlayImageList = []
 
 
@@ -22,6 +22,8 @@ for imagePath in myList:
     overlayImageList.append(image)
 
 
+# Setting the first image of the overlayImageList as the default header image 
+# When the webcam will be opened, the user will see this default header image
 header = overlayImageList[0]
 
 
