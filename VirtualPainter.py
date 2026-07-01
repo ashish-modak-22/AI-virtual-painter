@@ -125,6 +125,7 @@ while True:
             )
 
 
+        # Check if the fingers are in drawing mode or not ---> Drawing mode refers to the presence of only index finger
         if fingers[1] and not fingers[2]:
 
 
