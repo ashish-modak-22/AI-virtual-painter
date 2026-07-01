@@ -30,24 +30,25 @@ header = overlayImageList[0]
 selected_color = (0, 255, 0)
 
 
+# Initialize the webcam and set the desired resolution of the camera screen
 cap = cv2.VideoCapture(0)
 cap.set(3, 1280)
 cap.set(4, 720)
 
 
+# The 'detector' object will help later to use the methods of the 'HandDetectot' class properly
 detector = htm.HandDetector(detectionCon=0.8)
 
 
+#################################  Declaring the Constants  #################################
+
 brushThickness = 15
-
-
 eraserThickness = 50
-
-
 x_previous, y_previous = 0, 0
-
-
 drawing_started = False
+
+##############################################################################################
+
 
 
 # Creating a canvas for drawing using numpy
