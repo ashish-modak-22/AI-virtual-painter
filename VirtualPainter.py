@@ -40,6 +40,7 @@ cap.set(4, 720)
 detector = htm.HandDetector(detectionCon=0.8)
 
 
+
 #################################  Declaring the Constants  #################################
 
 brushThickness = 15
@@ -51,7 +52,8 @@ drawing_started = False
 
 
 
-# Creating a canvas for drawing using numpy
+# Create a black image that will store all drawing strokes
+# Canvas size: 1280x720 (Width x Height), 3 color channels (BGR)
 drawing_canvas = np.zeros((720, 1280, 3), np.uint8)
 
 
