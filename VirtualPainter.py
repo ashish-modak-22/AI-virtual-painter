@@ -65,12 +65,14 @@ while True:
     success, img = cap.read()
 
 
+    # Mirror the camera feed so hand movements feel natural to the user
     img = cv2.flip(img, 1)
 
 
     # Find the hand landmarks
     img = detector.findHands(img)
 
+    # Get the coordinates of the detected hand landmarks
     lmList = detector.findPosition(img)
 
 
