@@ -693,6 +693,12 @@ copies or substantial portions of the Software.
 - **[NumPy](https://numpy.org/)** — For efficient multi-dimensional array operations enabling the drawing canvas implementation
 ---
 
+## 📄 License
+ 
+This project is open source and available under the [Apache License 2.0](License).
+
+---
+
 <div align="center">
   
 **Built with ❤️ using Python, OpenCV, and MediaPipe**
